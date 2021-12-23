@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="answer">
+	<insert id="submit" parameterType="adto">
+		insert into answer(s_number, q_number, m_id, a_answer)
+			value(#{s_number}, #{q_number}, #{m_id}, #{a_answer})
+	</insert>
+	
+	<select id="q_score" parameterType="adto" resultType="long">
+		select q_number from question where q_number=#{q_number} and q_answer=#{a_number}
+	</select>
+	
+	<select id="s_quantity" parameterType="long" resultType="long">
+		select s_quantity from subjects where s_number=#{s_number}
+	</select>
+	
+	<insert id="myscore" parameterType="msdto">
+		insert into myscore(s_number, m_id, ms_score)
+			value(#{s_number}, #{m_id}, #{ms_score})
+	</insert>
+	
+	<insert id="review" parameterType="rdto">
+		insert into review(s_number, m_id, r_score, r_contents)
+			value(#{s_number}, #{m_id}, #{r_score}, #{r_contents})
+	</insert>
+	
+	<select id="findById_ms" parameterType="String" resultType="msdto">
+		select * from myscore where m_id=#{m_id}
+	</select>
+	
+</mapper>

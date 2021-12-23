@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="question">
+	<insert id="category" parameterType="cdto">
+		insert into category(c_name)
+			value(#{c_name})
+	</insert>
+	
+	<select id="c_num" parameterType="cdto" resultType="long">
+		select c_number from category where c_name
+	</select>
+	
+	<select id="c_findAll" resultType="cdto">
+		select * from category
+	</select>
+	
+	<insert id="subject" parameterType="sdto">
+		insert into subjects(c_number, s_name, m_id, s_quantity)
+			value(#{c_number}, #{s_name}, #{m_id}, #{s_quantity})
+	</insert>
+	
+	<select id="s_num" parameterType="String" resultType="long">
+		select s_number from subjects where s_name=#{s_name}
+	</select>
+	
+	<insert id="write" parameterType="qdto">
+		insert into question(s_number, m_id, q_name, q_filename, q_select1, q_select2, q_select3, q_select4, q_select5, q_answer, q_exposition)
+			value(#{s_number}, #{m_id}, #{q_name}, #{q_filename}, #{q_select1}, #{q_select2}, #{q_select3}, #{q_select4}, #{q_select5}, #{q_answer}, #{q_exposition})
+	</insert>
+	
+	<select id="sList" parameterType="long" resultType="sdto">
+		select * from subjects where c_number=#{c_number}
+	</select>
+	
+	<select id="qList" parameterType="long" resultType="qdto">
+		select * from question where s_number=#{s_number}
+	</select>
+	
+	<select id="findById" parameterType="String" resultType="sdto">
+		select * from subjects where m_id=#{m_id}
+	</select>
+	
+	<select id="count" resultType="int">
+		select count(q_number) from question
+	</select>
+	
+	<select id="s_findAll" parameterType="java.util.HashMap" resultType="qdto">
+		select * from subjects order by s_number desc limit #{start}, #{limit}
+	</select>
+	
+	<delete id="s_delete" parameterType="long">
+		delete from subjects where s_number=#{s_number}
+	</delete>
+	
+</mapper>

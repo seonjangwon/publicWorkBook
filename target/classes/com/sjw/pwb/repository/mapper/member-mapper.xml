@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="member">
+	<insert id="signup" parameterType="mdto">
+		insert into members(m_id, m_password, m_name, m_email, m_phone, m_type)
+			value(#{m_id}, #{m_password}, #{m_name}, #{m_email}, #{m_phone}, #{m_type})
+	</insert>
+	
+	<select id="idch" parameterType="String" resultType="String">
+		select m_id from members where m_id = #{m_id}
+	</select>
+	
+	<select id="login" parameterType="mdto" resultType="mdto">
+		select * from members where m_id=#{m_id} and m_password=#{m_password} and m_type=#{m_type}
+	</select>
+	
+	<update id="update" parameterType="mdto">
+		update members set m_name=#{m_name}, m_email=#{m_email}, m_phone=#{m_phone} where m_id=#{m_id}
+	</update>
+	
+	<select id="pwch" parameterType="mdto" resultType="String">
+		select m_id from members where m_id = #{m_id} and m_password=#{m_password}
+	</select>
+	
+	<select id="count" resultType="int">
+		select count(m_number) from members
+	</select>
+	
+	<select id="paging" parameterType="java.util.HashMap" resultType="mdto">
+		select * from members order by m_number asc limit #{start}, #{limit}
+	</select>
+	
+	<delete id="m_delete" parameterType="String">
+		delete from members where m_id=#{m_id}
+	</delete>
+</mapper>
