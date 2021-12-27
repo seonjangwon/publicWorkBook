@@ -39,4 +39,12 @@ public class AnswerService {
 	public List<MyscoreDTO> findById_ms(String m_id) {
 		return ar.findById_ms(m_id);
 	}
+
+	public List<ReviewDTO> s_review(long s_number) {
+		return ar.s_review(s_number);
+	}
+
+	public double r_avg(long s_number) {
+		return ar.r_avg(s_number);
+	}
 }

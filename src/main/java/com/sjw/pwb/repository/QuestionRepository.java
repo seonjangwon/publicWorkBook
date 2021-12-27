@@ -64,7 +64,7 @@ public class QuestionRepository {
 		return sql.selectOne("question.count");
 	}
 
-	public List<QuestionDTO> s_findAll(Map<String, Integer> sMap) {
+	public List<SubjectDTO> s_findAll(Map<String, Integer> sMap) {
 		return sql.selectList("question.s_findAll", sMap);
 	}
 

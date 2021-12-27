@@ -26,6 +26,7 @@
 			<th>작성자</th>
 			<th>문제 숫자</th>
 			<th>삭제</th>
+			<th>리뷰</th>
 		</tr>
 		<c:forEach items="${sList}" var="s" varStatus="st">
 			<tr>
@@ -33,30 +34,10 @@
 				<td><a href="/question/detail?s_number=${s.s_number}">${s.s_name}</a></td>
 				<td>${s.m_id}</td>
 				<td>${s.s_quantity}</td>
-				<td><a href="/member/delete?s_number=${s.s_number}">삭제</a></td>
+				<td><a href="/member/q_delete?s_number=${s.s_number}&page=${page.page}">삭제</a></td>
+				<td><a href="/answer/r_detail?s_number=${s.s_number}">리뷰</a></td>
 			</tr>
-			<tr>
-				<td>
-					<div class="accordion" id="accordionExample">
-						<div class="accordion-item">
-							<h2 class="accordion-header" id="headingOne">
-								<button class="accordion-button" type="button"
-									data-bs-toggle="collapse" data-bs-target="#collapseOne"
-									aria-expanded="true" aria-controls="collapseOne">
-									리뷰 확인</button>
-							</h2>
-							<div id="collapseOne" class="accordion-collapse collapse show"
-								aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-								<div class="accordion-body">
-									<c:forEach items="${rList}" var="r">
-										
-									</c:forEach>
-								</div>
-							</div>
-						</div>
-					</div>
-				</td>
-			</tr>
+			${page}
 		</c:forEach>
 	</table>
 	<div>
@@ -66,7 +47,7 @@
 			</c:when>
 
 			<c:otherwise>
-				<a href="/member/m_findAll?page=${page.page-1}">[이전]</a>
+				<a href="/member/q_findAll?page=${page.page-1}">[이전]</a>
 			</c:otherwise>
 
 		</c:choose>
@@ -78,7 +59,7 @@
 					${i}
 				</c:when>
 				<c:otherwise>
-					<a href="/member/m_findAll?page=${i}">${i}</a>
+					<a href="/member/q_findAll?page=${i}">${i}</a>
 				</c:otherwise>
 			</c:choose>
 		</c:forEach>
@@ -88,7 +69,7 @@
 				[다음]
 			</c:when>
 			<c:otherwise>
-				<a href="/member/m_findAll?page=${page.page+1}">[다음]</a>
+				<a href="/member/q_findAll?page=${page.page+1}">[다음]</a>
 			</c:otherwise>
 		</c:choose>
 	</div>

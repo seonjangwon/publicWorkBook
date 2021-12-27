@@ -30,4 +30,12 @@
 		select * from myscore where m_id=#{m_id}
 	</select>
 	
+	<select id="s_review" parameterType="long" resultType="rdto">
+		select * from review where s_number = #{s_number}
+	</select>
+	
+	<select id="r_avg" parameterType="long" resultType="double">
+		select avg(r_score) from review where s_number = #{s_number}
+	</select>
+	
 </mapper>

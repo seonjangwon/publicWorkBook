@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sjw.pwb.dto.CategoryDTO;
 import com.sjw.pwb.dto.QuestionDTO;
+import com.sjw.pwb.dto.ReviewDTO;
 import com.sjw.pwb.dto.SubjectDTO;
+import com.sjw.pwb.service.AnswerService;
 import com.sjw.pwb.service.QuestionService;
 
 @Controller
@@ -21,6 +23,8 @@ import com.sjw.pwb.service.QuestionService;
 public class QuestionController {
 	@Autowired
 	private QuestionService qs;
+	@Autowired
+	private AnswerService as;
 	
 	// 문제 출제
 	@RequestMapping(value="question", method = RequestMethod.GET)
@@ -53,7 +57,9 @@ public class QuestionController {
 		qs.subject(s); 
 		
 		// 과목 번호 가져오고
+		// 이거 왜 만들었지 s_number를 보내서 s_number를 받아왔네
 		long s_num = qs.s_num(s.getS_name()); // 문제 숫자를 바꾸려면 DTO로 quantity값도 가져와야함
+		model.addAttribute("sdto", s);
 		model.addAttribute("s_num", s_num);
 		
 		return "/question/write";
@@ -68,7 +74,7 @@ public class QuestionController {
 		qs.write(q.getQList().get(i));
 		}
 		
-		return "index"; // 문제 보는 화면으로 가자
+		return "index"; 
 	}
 	
 	
@@ -84,7 +90,11 @@ public class QuestionController {
 	@RequestMapping(value="category_select", method = RequestMethod.GET)
 	public String category_select(@RequestParam("c_number") long c_number, Model model) {
 		List<SubjectDTO> sList = qs.sList(c_number);
+		
+		
+		
 		model.addAttribute("sList", sList);
+		
 		
 		return "/question/select";
 	}

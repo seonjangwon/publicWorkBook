@@ -11,7 +11,7 @@
 <body>
 	<h2>문제 출제</h2>
 	<form action="/question/write" method="post" enctype="multipart/form-data">
-		<c:forEach begin="0" end="4" varStatus="status">
+		<c:forEach begin="0" end="${sdto.s_quantity - 1}" varStatus="status">
 			${status.count} 번 문제 <br>
 			<input type="hidden" name="qList[${status.index}].s_number" value="${s_num}"><br>
 			<input type="hidden" name="qList[${status.index}].m_id" value="${loginDTO.m_id}"><br>

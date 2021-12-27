@@ -10,7 +10,7 @@
 	<h2>관리자 페이지</h2>
 	
 	<a href="/member/m_findAll">전체 회원 관리</a><br>
-	<a href="">전체 문제 관리</a>
+	<a href="/member/q_findAll">전체 문제 관리</a>
 	
 </body>
 </html>

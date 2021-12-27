@@ -43,10 +43,10 @@
 	</select>
 	
 	<select id="count" resultType="int">
-		select count(q_number) from question
+		select count(s_number) from subjects
 	</select>
 	
-	<select id="s_findAll" parameterType="java.util.HashMap" resultType="qdto">
+	<select id="s_findAll" parameterType="java.util.HashMap" resultType="sdto">
 		select * from subjects order by s_number desc limit #{start}, #{limit}
 	</select>
 	

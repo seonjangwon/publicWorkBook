@@ -34,7 +34,7 @@
 		</tr>
 		</c:forEach>
 	</table>
-	
+	${page}
 	<div>
 		<c:choose>
 			<c:when test="${page.page <= 1 }">

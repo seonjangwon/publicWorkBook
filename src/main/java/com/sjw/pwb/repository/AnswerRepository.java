@@ -45,4 +45,12 @@ public class AnswerRepository {
 	public List<MyscoreDTO> findById_ms(String m_id) {
 		return sql.selectList("answer.findById_ms", m_id);
 	}
+
+	public List<ReviewDTO> s_review(long s_number) {
+		return sql.selectList("answer.s_review", s_number);
+	}
+
+	public double r_avg(long s_number) {
+		return sql.selectOne("answer.r_avg", s_number);
+	}
 }

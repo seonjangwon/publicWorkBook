@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sjw.pwb.dto.AnswerDTO;
 import com.sjw.pwb.dto.MyscoreDTO;
@@ -87,6 +88,18 @@ public class AnswerController {
 		
 		
 		return "index";
+	}
+	
+	@RequestMapping(value="r_detail", method = RequestMethod.GET)
+	public String r_detaul(Model model, @RequestParam("s_number") long s_number) {
+		List<ReviewDTO> rList = as.s_review(s_number);
+		
+		int avg = (int)(Math.ceil((double)as.r_avg(s_number)));
+		
+		model.addAttribute("rList", rList);
+		model.addAttribute("avg", avg);
+		
+		return "/question/r_detail";
 	}
 	
 }

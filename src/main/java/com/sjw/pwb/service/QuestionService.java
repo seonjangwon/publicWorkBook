@@ -83,7 +83,7 @@ public class QuestionService {
 	public PageDTO paging(int page) {
 		int questionPage = qr.count();
 		int maxPage = (int)(Math.ceil((double)questionPage/PAGE_LIMIT));
-		int startPage = ((((int)(Math.ceil((double)questionPage/BLOCK_LIMIT)))-1)*BLOCK_LIMIT+1);
+		int startPage = (((int)(Math.ceil((double)page/BLOCK_LIMIT)))-1)*BLOCK_LIMIT+1;
 		int endPage = startPage + BLOCK_LIMIT-1;
 		if(endPage>maxPage) {
 			endPage=maxPage;
@@ -98,7 +98,7 @@ public class QuestionService {
 		return p;
 	}
 
-	public List<QuestionDTO> s_findAll(int page) {
+	public List<SubjectDTO> s_findAll(int page) {
 		int startPage = (page-1)*PAGE_LIMIT;
 		Map<String, Integer> sMap = new HashMap<String, Integer>();
 		sMap.put("start", startPage);

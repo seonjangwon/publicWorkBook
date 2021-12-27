@@ -157,7 +157,8 @@ public class MemberController {
 	public String q_findAll(Model model, @RequestParam(value="page", required=false, defaultValue="1") int page) {
 		
 		PageDTO p = qs.paging(page);
-		List<QuestionDTO> sList = qs.s_findAll(page);
+		List<SubjectDTO> sList = qs.s_findAll(page);
+		System.out.println(sList);
 //		List<List<ReviewDTO>> rList = as.findById_r();
 		
 		model.addAttribute("sList", sList);
@@ -168,11 +169,11 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="q_delete", method = RequestMethod.GET)
-	public String q_delete(@RequestParam("s_number") long s_number, @RequestParam("page") int page) {
+	public String q_delete(@RequestParam("s_number") long s_number, @RequestParam(value="page", required=false, defaultValue="1") int page) {
 		
 		qs.delete(s_number);
 		
-		return "/member/q_findALL?page="+page;
+		return "redirect:/member/q_findAll";
 	}
 	
 	
@@ -205,6 +206,13 @@ public class MemberController {
 	public String naverlogin() {
 		
 		
+		return "index";
+	}
+	
+	// 카카오 로그인
+	@RequestMapping(value="kakaologin", method = RequestMethod.GET)
+	public String kakaologin(@RequestParam("code") String code) {
+		System.out.println(code);
 		return "index";
 	}
 

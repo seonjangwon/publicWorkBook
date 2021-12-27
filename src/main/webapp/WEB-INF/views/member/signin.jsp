@@ -33,8 +33,37 @@
 	</form>
 	<br>
 	<button id="naverIdLogin_loginButton">네이버로 로그인</button>
-	<a href="/member/naverlogin">네이버</a>
+	<a href="/member/naverlogin">네이버</a><br>
+	
+	<a href="javascript:kakaoLogin();"><img src="./kakao_login.png" alt="카카오계정 로그인" style="height: 100px;"/></a><br>
+	
 </body>
+<!-- 카카오 스크립트 -->
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        window.Kakao.init('4f7e6a6740e72046aa0b6c7aab194013');
+
+        function kakaoLogin() {
+            window.Kakao.Auth.login({
+                scope: 'profile_nickname, account_email', //동의항목 페이지에 있는 개인정보 보호 테이블의 활성화된 ID값을 넣습니다.
+                success: function(response) {
+                    console.log(response) // 로그인 성공하면 받아오는 데이터
+                    window.Kakao.API.request({ // 사용자 정보 가져오기 
+                        url: '/member/kakaologin',
+                        success: (res) => {
+                            const kakao_account = res.kakao_account;
+                            console.log(kakao_account)
+                        }
+                    });
+                    // window.location.href='/ex/kakao_login.html' //리다이렉트 되는 코드
+                },
+                fail: function(error) {
+                    console.log(error);
+                }
+            });
+        }
+    </script>
+
 <!-- 네이버 스크립트 -->
 <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
 
