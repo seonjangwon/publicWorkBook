@@ -43,8 +43,10 @@ public class QuestionController {
 		if(c.getC_number()==0) {
 			qs.category(c);
 			c_num = qs.c_num(c);
+			System.out.println(1);
 		} else {
 			c_num = c.getC_number();
+			System.out.println(2);
 		}
 		model.addAttribute("c_num", c_num);
 		return "/question/subject";// 과목 출제 페이지로

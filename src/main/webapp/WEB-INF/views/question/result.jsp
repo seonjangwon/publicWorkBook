@@ -63,14 +63,14 @@
 	<h2>리뷰 등록</h2>
 	<form id="review_form" action="/answer/review" method="post">
 		<input type="hidden" name="s_number" value="${falseList[1].s_number}"><br>
-		작성자 : <input type="text" name="m_id" value="${lofinDTO.m_id}"><br>
+		작성자 : <input type="text" name="m_id" value="${loginDTO.m_id}" readonly><br>
 	<fieldset>
 		<legend>별점<br></legend>
-		<input type="radio" name="r_score" value="1.0" id="score1"><label for="score1">⭐</label>
-		<input type="radio" name="r_score" value="2.0" id="score2"><label for="score2">⭐</label>
+		<input type="radio" name="r_score" value="5.0" id="score1"><label for="score1">⭐</label>
+		<input type="radio" name="r_score" value="4.0" id="score2"><label for="score2">⭐</label>
 		<input type="radio" name="r_score" value="3.0" id="score3"><label for="score3">⭐</label>
-		<input type="radio" name="r_score" value="4.0" id="score4"><label for="score4">⭐</label>
-		<input type="radio" name="r_score" value="5.0" id="score5"><label for="score5">⭐</label>
+		<input type="radio" name="r_score" value="2.0" id="score4"><label for="score4">⭐</label>
+		<input type="radio" name="r_score" value="1.0" id="score5"><label for="score5">⭐</label>
 		<br>
 	</fieldset><br>
 		리뷰 내용 : <input type="text" name="r_contents"><br>

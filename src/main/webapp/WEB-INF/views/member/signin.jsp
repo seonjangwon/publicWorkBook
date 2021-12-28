@@ -34,9 +34,12 @@
 	<br>
 	<button id="naverIdLogin_loginButton">네이버로 로그인</button>
 	<a href="/member/naverlogin">네이버</a><br>
+	<a href="[https://kauth.kakao.com/oauth/authorize?client_id=5156cbc6620cde3e4649044a00f0dd0d&redirect_uri=http://localhost:8087/member/kakaologin&response_type=code](https://kauth.kakao.com/oauth/authorize?client_id=5156cbc6620cde3e4649044a00f0dd0d&redirect_uri=http://localhost:8087/member/kakaologin&response_type=code)">
+	카카오</a>
 	
-	<a href="javascript:kakaoLogin();"><img src="./kakao_login.png" alt="카카오계정 로그인" style="height: 100px;"/></a><br>
-	
+	<a href="[https://kauth.kakao.com/oauth/authorize?client_id=여기에restapi키를넣습니다&redirect_uri=http://localhost:8080/happyhouse8/kakaologindone&response_type=code](https://kauth.kakao.com/oauth/authorize?client_id=4ed7f6ea6561f44f2bec7a72c854be78&redirect_uri=http://localhost:8087/happyhouse8/kakaologindone&response_type=code)"> 카카오2 </a>
+	<a href="https://kauth.kakao.com/oauth/authorize?client_id=5156cbc6620cde3e4649044a00f0dd0d&redirect_uri=http://localhost:8087/member/kakaologin&response_type=code">
+	카카3오</a>
 </body>
 <!-- 카카오 스크립트 -->
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>

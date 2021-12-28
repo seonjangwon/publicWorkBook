@@ -29,7 +29,7 @@ public class MemberService {
 	public String idch(String m_id) {
 		String result = mr.idch(m_id);
 
-		if (result == null)
+		if (result != null)
 			return "no";
 		else
 			return "ok";

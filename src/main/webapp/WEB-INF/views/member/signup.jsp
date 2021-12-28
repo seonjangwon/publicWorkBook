@@ -9,9 +9,9 @@
 <body>
 	<h2>회원 가입</h2>
 	
-	<a href="/member/t_signup">선생님으로 회원가입</a>
-	<a href="/member/s_signup">학생으로 회원가입</a>
-
+	<a href="/member/t_signup">선생님으로 회원가입</a><br>
+	<a href="/member/s_signup">학생으로 회원가입</a><br>
+	<a href="/member/kakao">카카오로 회원가입</a>
 	
 </body>
 </html>

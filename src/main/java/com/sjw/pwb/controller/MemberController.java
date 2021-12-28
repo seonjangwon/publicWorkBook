@@ -215,5 +215,10 @@ public class MemberController {
 		System.out.println(code);
 		return "index";
 	}
+	
+	@RequestMapping(value="kakao", method = RequestMethod.GET)
+	public String kakaopage() {
+		return "/member/kakao";
+	}
 
 }

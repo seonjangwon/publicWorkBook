@@ -9,7 +9,7 @@
 	</insert>
 	
 	<select id="c_num" parameterType="cdto" resultType="long">
-		select c_number from category where c_name
+		select c_number from category where c_name=#{c_name}
 	</select>
 	
 	<select id="c_findAll" resultType="cdto">
