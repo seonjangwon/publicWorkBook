@@ -16,6 +16,7 @@
 	전화번호 : ${loginDTO.m_phone}<br>
 	
 	<a href="/member/update">내 정보 수정</a><br>
-	<a href="/member/s_myanswer?m_id=${loginDTO.m_id}">내가 푼 문제 보기</a>
+	<a href="/member/s_myanswer?m_id=${loginDTO.m_id}">내가 푼 문제 보기</a><br>
+	<a href="/member/kakaounlink">카카오 회원 탈퇴</a>
 </body>
 </html>

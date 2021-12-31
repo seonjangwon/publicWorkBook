@@ -1,5 +1,6 @@
 package com.sjw.pwb.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -17,8 +18,6 @@ import com.sjw.pwb.dto.MemberDTO;
 import com.sjw.pwb.dto.MemberType;
 import com.sjw.pwb.dto.MyscoreDTO;
 import com.sjw.pwb.dto.PageDTO;
-import com.sjw.pwb.dto.QuestionDTO;
-import com.sjw.pwb.dto.ReviewDTO;
 import com.sjw.pwb.dto.SubjectDTO;
 import com.sjw.pwb.service.AnswerService;
 import com.sjw.pwb.service.MemberService;
@@ -213,6 +212,17 @@ public class MemberController {
 	@RequestMapping(value="kakaologin", method = RequestMethod.GET)
 	public String kakaologin(@RequestParam("code") String code) {
 		System.out.println(code);
+		String access_token = ms.getAccessToken(code); 
+		System.out.println("access_token" + access_token);
+		HashMap<String,String> userInfo = ms.getUserInfo(access_token); 
+		MemberDTO m = new MemberDTO();
+		m.setM_id(userInfo.get("id"));
+		m.setM_name(userInfo.get("name"));
+		m.setM_email(userInfo.get("id"));
+		m.setM_type(MemberType.student);
+		session.setAttribute("loginDTO", m);  
+		System.out.println(userInfo);
+
 		return "index";
 	}
 	
@@ -220,5 +230,21 @@ public class MemberController {
 	public String kakaopage() {
 		return "/member/kakao";
 	}
+	
+	@RequestMapping(value="/kakaologout")
+	public String logout(HttpSession session) { 
+		ms.logout((String)session.getAttribute("access_token")); 
+		session.invalidate(); 
+		return "index"; 
+	}
+	
+	// 이거는 카카오 회원 탈퇴
+	@RequestMapping(value="/kakaounlink") 
+	public String unlink(HttpSession session) { 
+		ms.unlink((String)session.getAttribute("access_token")); 
+		session.invalidate(); 
+		return "index"; 
+	}
+
 
 }
