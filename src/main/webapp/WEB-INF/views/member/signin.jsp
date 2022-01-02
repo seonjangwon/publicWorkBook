@@ -23,7 +23,7 @@
 <body class="sb-nav-fixed">
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 		<!-- Navbar Brand-->
-		<a class="navbar-brand ps-3" href="/">Start Bootstrap</a>
+		<a class="navbar-brand ps-3" href="/">Public Work Book</a>
 		<!-- Sidebar Toggle-->
 		<button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
 			id="sidebarToggle" href="#!">
@@ -158,13 +158,13 @@
 												for="inputPassword">Password</label>
 										</div>
 										<div class="form-radio mb-3">
-											<input class="form-radio-input" name="m_type" id="teacher"
+											<input class="form-check-input" name="m_type" id="teacher"
 												type="radio" value="teacher" /> <label class="form-check-label"
 												for="teacher">teacher</label>
-											<input class="form-radio-input" name="m_type" id="student"
+											<input class="form-check-input" name="m_type" id="student"
 												type="radio" value="student" /> <label class="form-check-label"
 												for="student">student</label>
-											<input class="form-radio-input" name="m_type" id="admin"
+											<input class="form-check-input" name="m_type" id="admin"
 												type="radio" value="admin" /> <label class="form-check-label"
 												for="admin">admin</label>	
 										</div>

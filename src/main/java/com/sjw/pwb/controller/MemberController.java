@@ -226,13 +226,8 @@ public class MemberController {
 		return "index";
 	}
 	
-	@RequestMapping(value="kakao", method = RequestMethod.GET)
-	public String kakaopage() {
-		return "/member/kakao";
-	}
-	
 	@RequestMapping(value="/kakaologout")
-	public String logout(HttpSession session) { 
+	public String kakaologout(HttpSession session) { 
 		ms.logout((String)session.getAttribute("access_token")); 
 		session.invalidate(); 
 		return "index"; 
@@ -240,7 +235,7 @@ public class MemberController {
 	
 	// 이거는 카카오 회원 탈퇴
 	@RequestMapping(value="/kakaounlink") 
-	public String unlink(HttpSession session) { 
+	public String kakaounlink(HttpSession session) { 
 		ms.unlink((String)session.getAttribute("access_token")); 
 		session.invalidate(); 
 		return "index"; 

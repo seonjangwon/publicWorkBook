@@ -21,7 +21,7 @@
 <body class="sb-nav-fixed">
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 		<!-- Navbar Brand-->
-		<a class="navbar-brand ps-3" href="/">Start Bootstrap</a>
+		<a class="navbar-brand ps-3" href="/">Public Work Book</a>
 		<!-- Sidebar Toggle-->
 		<button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
 			id="sidebarToggle" href="#!">
@@ -167,11 +167,7 @@
 										</div>
 									</form>
 								</div>
-								<div class="card-footer text-center py-3">
-									<div class="small">
-										<a href="register.html">Need an account? Sign up!</a>
-									</div>
-								</div>
+								
 							</div>
 						</div>
 					</div>

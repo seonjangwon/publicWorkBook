@@ -7,6 +7,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="./mystyle.css" />
+<!-- [if lte IE 8] -->
+<script type="text/javascript" src="./respond.min.js"></script>
+<!-- [endif] -->
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
 <link
 	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
 	rel="stylesheet" />
@@ -14,11 +28,21 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
 	crossorigin="anonymous"></script>
+<style>
+	@media screen and (max-height: 500px) {
+		.carousel{
+		 height: 100px;
+		 margin: 20px;
+	}
+	}
+	
+	
+</style>
 </head>
 <body class="sb-nav-fixed">
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 		<!-- Navbar Brand-->
-		<a class="navbar-brand ps-3" href="/">Start Bootstrap</a>
+		<a class="navbar-brand ps-3" href="/">Public Work Book</a>
 		<!-- Sidebar Toggle-->
 		<button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
 			id="sidebarToggle" href="#!">
@@ -89,12 +113,14 @@
 						<div class="sb-sidenav-menu-heading">Interface</div>
 						<c:choose>
 							<c:when test="${loginDTO.m_type eq 'teacher' }">
-								<a class="nav-link" href="/question/question"><div class="sb-nav-link-icon">
+								<a class="nav-link" href="/question/question"><div
+										class="sb-nav-link-icon">
 										<i class="fas fa-columns"></i>
 									</div> 문제 출제 </a>
 							</c:when>
 							<c:when test="${loginDTO.m_type eq 'student' }">
-								<a class="nav-link" href="/question/solve"><div class="sb-nav-link-icon">
+								<a class="nav-link" href="/question/solve"><div
+										class="sb-nav-link-icon">
 										<i class="fas fa-book-open"></i>
 									</div> 문제 풀기 </a>
 							</c:when>
@@ -102,21 +128,24 @@
 						<div class="sb-sidenav-menu-heading">Addons</div>
 						<c:choose>
 							<c:when test="${loginDTO.m_type eq 'teacher' }">
-							<a class="nav-link" href="/member/t_mypage"> <div class="sb-nav-link-icon">
-									<i class="fas fa-chart-area"></i>
-								</div> 선생님 마이페이지 </a>
+								<a class="nav-link" href="/member/t_mypage">
+									<div class="sb-nav-link-icon">
+										<i class="fas fa-chart-area"></i>
+									</div> 선생님 마이페이지
+								</a>
 							</c:when>
 							<c:when test="${loginDTO.m_type eq 'student' }">
-								<a class="nav-link" href="/member/s_mypage"><div class="sb-nav-link-icon">
+								<a class="nav-link" href="/member/s_mypage"><div
+										class="sb-nav-link-icon">
 										<i class="fas fa-table"></i>
 									</div> 학생 마이페이지 </a>
 							</c:when>
 							<c:when test="${loginDTO.m_type eq 'admin' }">
-							<div class="sb-nav-link-icon">
-										<i class="fas fa-table"></i>
-								<a class="nav-link" href="/member/admin"><div class="sb-nav-link-icon">
-										<i class="fas fa-table"></i>
-									</div>  관리자 페이지 </a>
+								<div class="sb-nav-link-icon">
+									<i class="fas fa-table"></i> <a class="nav-link"
+										href="/member/admin"><div class="sb-nav-link-icon">
+											<i class="fas fa-table"></i>
+										</div> 관리자 페이지 </a>
 							</c:when>
 						</c:choose>
 					</div>
@@ -129,6 +158,42 @@
 		</div>
 		<div id="layoutSidenav_content">
 			<main>
+				<div id="carouselExampleCaptions" class="carousel slide" width="10%"
+					data-bs-ride="carousel">
+					<div class="carousel-indicators">
+						<button type="button" data-bs-target="#carouselExampleCaptions"
+							data-bs-slide-to="0" class="active" aria-current="true"
+							aria-label="Slide 1"></button>
+						<button type="button" data-bs-target="#carouselExampleCaptions"
+							data-bs-slide-to="1" aria-label="Slide 2"></button>
+					</div>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="/resources/upload/people-g4a1ce80ce_1920.jpg" class="d-block w-100" alt="...">
+							<div class="carousel-caption d-none d-md-block">
+								<h5>Public Work Book</h5>
+								<p>다양한 사람들과 함께 문제를 공유해 보아요</p>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<img src="/resources/upload/children-g43ba51970_1920.jpg" class="d-block w-100" alt="...">
+							<div class="carousel-caption d-none d-md-block">
+								<h5>합격!</h5>
+								<p>합격의 즐거움을 모두에게 알려주세요</p>
+							</div>
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button"
+						data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button"
+						data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
 				<h2>index</h2>
 				${loginDTO}
 				<c:choose>
