@@ -187,7 +187,7 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-7">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Teacher Sign Up</h3></div>
                                     <div class="card-body">
                                         <form action="/member/signup" name="signup_form2" method="post">
                                             <div class="row mb-3">
@@ -235,18 +235,6 @@
                             </div>
                         </div>
                     </div>
-				<h2>선생님으로 회원가입</h2>
-
-				<form action="/member/signup" name="signup_form" method="post">
-					아이디 : <input type="text" id="m_id" name="m_id"><br>
-					비밀번호 : <input type="password" name="m_password"><br>
-					이름 : <input type="text" name="m_name"><br> 이메일 : <input
-						type="text" name="m_email"><br> 전화번호 : <input
-						type="text" name="m_phone"><br> <input type="hidden"
-						name="m_type" value="teacher"><br>
-					<button onclick="idch()">가입하기</button>
-					<br>
-				</form>
 			</main>
 			<footer class="py-4 bg-light mt-auto">
 				<div class="container-fluid px-4">

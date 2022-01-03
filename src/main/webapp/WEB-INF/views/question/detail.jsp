@@ -144,8 +144,7 @@
 						<div class="col-lg-8">
 							<div class="card shadow-lg border-0 rounded-lg mt-5">
 								<div class="card-header">
-									<h3 class="text-center font-weight-light my-4">Subject
-										Setting</h3>
+									<h3 class="text-center font-weight-light my-4">Question Solve</h3>
 								</div>
 								<form action="/answer/submit" name="submit_form" method="post">
 									<div class="row">
@@ -229,7 +228,7 @@
 										</div>
 										<div
 											class="d-flex align-items-center justify-content-between mt-4 mb-0">
-											<a class="btn btn-primary" onclick="submit_btn()">만들기</a>
+											<a class="btn btn-primary" onclick="submit_btn()">Answer Submit</a>
 										</div>
 									</div>
 								</form>
@@ -237,42 +236,6 @@
 						</div>
 					</div>
 				</div>
-				<h2>문제 풀기</h2>
-				<form action="/answer/submit" method="post">
-					<c:forEach items="${qList}" var="q" varStatus="s">
-						<input type="hidden" name="AList[${s.index}].s_number" value="${q.s_number}">
-						<input type="hidden" name="AList[${s.index}].q_number" value="${q.q_number}">
-						<input type="hidden" name="AList[${s.index}].m_id" value="${loginDTO.m_id}">
-		${s.count}번 문제 <br>
-		${q.q_name}<br>
-						<img alt="해설이 없습니다" src="/resources/uplode/${q.q_filename}">${q.q_filename}<br>
-						<input type="radio" id="${s.count}_1"
-							name="AList[${s.index}].a_answer" value="1">
-						<label for="${s.count}_1">${q.q_select1}</label>
-						<br>
-						<input type="radio" id="${s.count}_2"
-							name="AList[${s.index}].a_answer" value="2">
-						<label for="${s.count}_2">${q.q_select2}</label>
-						<br>
-						<input type="radio" id="${s.count}_3"
-							name="AList[${s.index}].a_answer" value="3">
-						<label for="${s.count}_3">${q.q_select3}</label>
-						<br>
-						<input type="radio" id="${s.count}_4"
-							name="AList[${s.index}].a_answer" value="4">
-						<label for="${s.count}_4">${q.q_select4}</label>
-						<br>
-						<c:if test="${q.q_select5 != null}">
-							<input type="radio" id="${s.count}_5"
-								name="AList[${s.index}].a_answer" value="5">
-							<label for="${s.count}_5">${q.q_select5}</label>
-							<br>
-						</c:if>
-						<br>
-						<br>
-					</c:forEach>
-					<input type="submit" value="정답 제출">
-				</form>
 			</main>
 			<footer class="py-4 bg-light mt-auto">
 				<div class="container-fluid px-4">

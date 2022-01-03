@@ -152,10 +152,6 @@
 						</div>
 					</div>
 				</div>
-				<h2>관리자 페이지</h2>
-
-				<a href="/member/m_findAll">전체 회원 관리</a><br> <a
-					href="/member/q_findAll">전체 문제 관리</a>
 			</main>
 			<footer class="py-4 bg-light mt-auto">
 				<div class="container-fluid px-4">

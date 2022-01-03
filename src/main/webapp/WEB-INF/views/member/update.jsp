@@ -235,18 +235,6 @@
 						</div>
 					</div>
 				</div>
-				<h2>정보 수정</h2>
-				<form action="update" method="post" name="update_form">
-					<input type="text" id="m_id" name="m_id" value="${loginDTO.m_id}"
-						readonly><br> <input type="password" id="m_pw"
-						name="m_password"><br> 이름 : <input type="text"
-						name="m_name" value="${loginDTO.m_name}"><br> 이메일 : <input
-						type="text" name="m_email" value="${loginDTO.m_email }"><br>
-					전화번호 : <input type="text" name="m_phone"
-						value="${loginDTO.m_phone }"><br> <input
-						type="hidden" name="m_type" value="${loginDTO.m_type}"><br>
-					<button onclick="pwch()">수정하기</button>
-				</form>
 			</main>
 			<footer class="py-4 bg-light mt-auto">
 				<div class="container-fluid px-4">

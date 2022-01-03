@@ -15,10 +15,10 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
 	crossorigin="anonymous"></script>
 <script>
-	function c_make(){
+	function c_make() {
 		c_make_form.submit();
 	}
-	function c_select(){
+	function c_select() {
 		c_select_form.submit();
 	}
 </script>
@@ -147,29 +147,32 @@
 						<div class="col-lg-5">
 							<div class="card shadow-lg border-0 rounded-lg mt-5">
 								<div class="card-header">
-									<h3 class="text-center font-weight-light my-4">Category Make</h3>
+									<h3 class="text-center font-weight-light my-4">Category
+										Make</h3>
 								</div>
 								<div class="card-body">
-									<form name="c_make_form" action="/question/category" method="post">
+									<form name="c_make_form" action="/question/category"
+										method="post">
 										<div class="form-floating mb-3">
-											<input class="form-control" name="c_number" id="inputEmail" type="text"
-												placeholder="" /> <label for="inputEmail">카테고리 이름</label> <a
-												class="btn btn-primary" onclick="c_make()">만들기</a>
+											<input class="form-control" name="c_number" id="inputEmail"
+												type="text" placeholder="" /> <label for="inputEmail">카테고리
+												이름</label> <a class="btn btn-primary" onclick="c_make()">만들기</a>
 										</div>
 									</form>
 								</div>
 								<div class="card-header">
-									<h3 class="text-center font-weight-light my-4">Category Select</h3>
+									<h3 class="text-center font-weight-light my-4">Category
+										Select</h3>
 								</div>
 								<div class="card-body">
-									<form name="c_select_form" action="/question/category" method="post">
+									<form name="c_select_form" action="/question/category"
+										method="post">
 										<div class="form-floating mb-3">
 											<select class="dataTable-selector" name="c_number">
 												<c:forEach items="${cList}" var="c">
 													<option value="${c.c_number}">${c.c_name}</option>
 												</c:forEach>
-											</select>
-											<a class="btn btn-primary" onclick="c_select()">선택</a>
+											</select> <a class="btn btn-primary" onclick="c_select()">선택</a>
 										</div>
 									</form>
 								</div>
@@ -177,25 +180,6 @@
 						</div>
 					</div>
 				</div>
-				<h2>문제 출제</h2>
-				<h3>카테고리 설정</h3>
-
-				<h3>카테고리 만들기</h3>
-				<form action="/question/category" method="post">
-					카테고리 이름 : <input type="text" name="c_name"> <input
-						type="submit" value="카테고리 설정">
-				</form>
-
-
-				<h3>카테고리 선택</h3>
-				<form action="/question/category" method="post">
-					<select name="c_number">
-						<option selected>카테고리 선택</option>
-						<c:forEach items="${cList}" var="c">
-							<option value="${c.c_number}">${c.c_name}</option>
-						</c:forEach>
-					</select> <input type="submit" value="카테고리 설정">
-				</form>
 			</main>
 			<footer class="py-4 bg-light mt-auto">
 				<div class="container-fluid px-4">

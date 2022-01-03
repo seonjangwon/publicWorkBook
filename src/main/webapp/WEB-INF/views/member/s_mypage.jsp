@@ -177,13 +177,6 @@
 						</div>
 					</div>
 				</div>
-				<h2>학생 마이페이지</h2>
-
-				아이디 : ${loginDTO.m_id}<br> 비밀번호 : ${loginDTO.m_password}<br>
-				이름 : ${loginDTO.m_name}<br> 이메일 : ${loginDTO.m_email}<br>
-				전화번호 : ${loginDTO.m_phone}<br> <a href="/member/update">내
-					정보 수정</a><br> <a href="/member/s_myanswer?m_id=${loginDTO.m_id}">내가
-					푼 문제 보기</a><br> <a href="/member/kakaounlink">카카오 회원 탈퇴</a>
 			</main>
 			<footer class="py-4 bg-light mt-auto">
 				<div class="container-fluid px-4">

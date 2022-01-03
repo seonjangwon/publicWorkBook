@@ -12,7 +12,7 @@
 <script type="text/javascript" src="./respond.min.js"></script>
 <!-- [endif] -->
 
-<link
+<!-- <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
@@ -20,7 +20,7 @@
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-	crossorigin="anonymous"></script>
+	crossorigin="anonymous"></script> -->
 <link
 	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
 	rel="stylesheet" />
@@ -29,14 +29,12 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
 	crossorigin="anonymous"></script>
 <style>
-	@media screen and (max-height: 500px) {
-		.carousel{
-		 height: 100px;
-		 margin: 20px;
+@media screen and (max-height: 500px) {
+	.carousel {
+		height: 100px;
+		margin: 20px;
 	}
-	}
-	
-	
+}
 </style>
 </head>
 <body class="sb-nav-fixed">
@@ -169,14 +167,16 @@
 					</div>
 					<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="/resources/upload/people-g4a1ce80ce_1920.jpg" class="d-block w-100" alt="...">
+							<img src="/resources/upload/people-g4a1ce80ce_1920.jpg"
+								class="d-block w-100" alt="...">
 							<div class="carousel-caption d-none d-md-block">
 								<h5>Public Work Book</h5>
 								<p>다양한 사람들과 함께 문제를 공유해 보아요</p>
 							</div>
 						</div>
 						<div class="carousel-item">
-							<img src="/resources/upload/children-g43ba51970_1920.jpg" class="d-block w-100" alt="...">
+							<img src="/resources/upload/children-g43ba51970_1920.jpg"
+								class="d-block w-100" alt="...">
 							<div class="carousel-caption d-none d-md-block">
 								<h5>합격!</h5>
 								<p>합격의 즐거움을 모두에게 알려주세요</p>
@@ -194,41 +194,61 @@
 						<span class="visually-hidden">Next</span>
 					</button>
 				</div>
-				<h2>index</h2>
-				${loginDTO}
-				<c:choose>
-					<c:when test="${loginDTO eq null}">
-						<a href="/member/signup">회원 가입</a>
-						<a href="/member/signin">로그인</a>
-					</c:when>
-					<c:otherwise>
-						<a href="/member/signout">로그아웃</a>
-						<br>
-						<a href="/member/kakaologout">카카오 로그아웃</a>
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-5">
+							<div class="card shadow-lg border-0 rounded-lg mt-5">
+								<div class="card-header">
+									<h3 class="text-center font-weight-light my-4">Welcome</h3>
+								</div>
+								<div class="card-body">
 
-					</c:otherwise>
-				</c:choose>
+									<div
+										class="d-flex align-items-center justify-content-between mt-4 mb-0">
+										<c:choose>
+											<c:when test="${loginDTO eq null}">
+												<a class="btn btn-primary" href="/member/signup">Sign Up</a>
+												<a class="btn btn-primary" href="/member/signin">Sign In</a>
+											</c:when>
+											<c:otherwise>
+												<a class="btn btn-primary" href="/member/signout">Sign
+													Out</a>
 
-				<c:choose>
-					<c:when test="${loginDTO.m_type eq 'teacher' }">
-						<a href="/member/t_mypage">선생님 마이페이지</a>
-					</c:when>
-					<c:when test="${loginDTO.m_type eq 'student' }">
-						<a href="/member/s_mypage">학생 마이페이지</a>
-					</c:when>
-					<c:when test="${loginDTO.m_type eq 'admin' }">
-						<a href="/member/admin">관리자 페이지</a>
-					</c:when>
-				</c:choose>
+												<a class="btn btn-primary" href="/member/kakaologout">Kakao
+													Sign Out</a>
 
-				<c:choose>
-					<c:when test="${loginDTO.m_type eq 'teacher' }">
-						<a href="/question/question">문제 출제하러</a>
-					</c:when>
-					<c:when test="${loginDTO.m_type eq 'student' }">
-						<a href="/question/solve">문제 풀러</a>
-					</c:when>
-				</c:choose>
+											</c:otherwise>
+										</c:choose>
+
+										<c:choose>
+											<c:when test="${loginDTO.m_type eq 'teacher' }">
+												<a class="btn btn-primary" href="/member/t_mypage">Teacher
+													My Page</a>
+											</c:when>
+											<c:when test="${loginDTO.m_type eq 'student' }">
+												<a class="btn btn-primary" href="/member/s_mypage">Student
+													My Page</a>
+											</c:when>
+											<c:when test="${loginDTO.m_type eq 'admin' }">
+												<a class="btn btn-primary" href="/member/admin">Admin
+													Page</a>
+											</c:when>
+										</c:choose>
+
+										<c:choose>
+											<c:when test="${loginDTO.m_type eq 'teacher' }">
+												<a class="btn btn-primary" href="/question/question">Make</a>
+											</c:when>
+											<c:when test="${loginDTO.m_type eq 'student' }">
+												<a class="btn btn-primary" href="/question/solve">Solve</a>
+											</c:when>
+										</c:choose>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</main>
 			<footer class="py-4 bg-light mt-auto">
 				<div class="container-fluid px-4">

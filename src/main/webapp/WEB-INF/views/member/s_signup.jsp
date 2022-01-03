@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!-- JSTL(JSP Standard Tag Library)사용 -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -17,23 +17,25 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 >
 <script>
-	function idch(){
+	function idch() {
 		const id = document.getElementById('m_id').value;
-		
+
 		$.ajax({
-			type:'post',
-			url:'/member/idch',
-			data:{"m_id":id},
-			datatype:'text',
-			success:function(result){
-				alert('성공'+result);
-				if(result=='ok'){
+			type : 'post',
+			url : '/member/idch',
+			data : {
+				"m_id" : id
+			},
+			datatype : 'text',
+			success : function(result) {
+				alert('성공' + result);
+				if (result == 'ok') {
 					signup_form.submit();
-				}else{
+				} else {
 					alert('중복 아이디입니다');
 				}
 			},
-			error:function(){
+			error : function() {
 				alert('오타를 찾아요');
 			}
 		});
@@ -182,70 +184,72 @@
 		</div>
 		<div id="layoutSidenav_content">
 			<main>
-			<div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-7">
-                                <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
-                                    <div class="card-body">
-                                        <form action="/member/signup" name="signup_form2" method="post">
-                                            <div class="row mb-3">
-                                                <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="text" name="m_id" placeholder="Enter your first name" />
-                                                        <label for="inputFirstName">아이디</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-floating">
-                                                        <input class="form-control" id="inputLastName" type="password" name="m_password" placeholder="Enter your last name" />
-                                                        <label for="inputLastName">비밀번호</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" name="m_email" placeholder="name@example.com" />
-                                                <label for="inputEmail">이메일</label>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPassword" type="text" name="m_name" placeholder="Create a password" />
-                                                        <label for="inputPassword">이름</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPasswordConfirm" type="text" name="m_phone" placeholder="Confirm password" />
-                                                        <label for="inputPasswordConfirm">전화번호</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="mt-4 mb-0"><input type="hidden"
-						name="m_type" value="student">
-                                                <div class="d-grid"><a class="btn btn-primary btn-block" onclick="idch2()">Create Account</a></div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="/member/signin">Have an account? Go to login</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-	<h2>학생으로 회원가입</h2>
-	
-	<form action="/member/signup" name="signup_form" method="post">
-		아이디 : <input type="text" id="m_id" name="m_id"><br>
-		비밀번호 : <input type="password" name="m_password"><br>
-		이름 : <input type="text" name="m_name"><br>
-		이메일 : <input type="text" name="m_email"><br>
-		전화번호 : <input type="text" name="m_phone"><br>
-		<input type="hidden" name="m_type" value="student"><br>
-		<button onclick="idch()">가입하기</button><br>
-	</form>
-</main>
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-7">
+							<div class="card shadow-lg border-0 rounded-lg mt-5">
+								<div class="card-header">
+									<h3 class="text-center font-weight-light my-4">Student Sign Up</h3>
+								</div>
+								<div class="card-body">
+									<form action="/member/signup" name="signup_form2" method="post">
+										<div class="row mb-3">
+											<div class="col-md-6">
+												<div class="form-floating mb-3 mb-md-0">
+													<input class="form-control" id="inputFirstName" type="text"
+														name="m_id" placeholder="Enter your first name" /> <label
+														for="inputFirstName">아이디</label>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-floating">
+													<input class="form-control" id="inputLastName"
+														type="password" name="m_password"
+														placeholder="Enter your last name" /> <label
+														for="inputLastName">비밀번호</label>
+												</div>
+											</div>
+										</div>
+										<div class="form-floating mb-3">
+											<input class="form-control" id="inputEmail" type="email"
+												name="m_email" placeholder="name@example.com" /> <label
+												for="inputEmail">이메일</label>
+										</div>
+										<div class="row mb-3">
+											<div class="col-md-6">
+												<div class="form-floating mb-3 mb-md-0">
+													<input class="form-control" id="inputPassword" type="text"
+														name="m_name" placeholder="Create a password" /> <label
+														for="inputPassword">이름</label>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-floating mb-3 mb-md-0">
+													<input class="form-control" id="inputPasswordConfirm"
+														type="text" name="m_phone" placeholder="Confirm password" />
+													<label for="inputPasswordConfirm">전화번호</label>
+												</div>
+											</div>
+										</div>
+										<div class="mt-4 mb-0">
+											<input type="hidden" name="m_type" value="student">
+											<div class="d-grid">
+												<a class="btn btn-primary btn-block" onclick="idch2()">Create
+													Account</a>
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="card-footer text-center py-3">
+									<div class="small">
+										<a href="/member/signin">Have an account? Go to login</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
 			<footer class="py-4 bg-light mt-auto">
 				<div class="container-fluid px-4">
 					<div

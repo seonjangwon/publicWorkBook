@@ -261,52 +261,6 @@
 						</div>
 					</div>
 				</div>
-				<h2>풀이 결과</h2>
-
-				점수 : ${score} <br>
-				<c:choose>
-					<c:when test="${falseList eq null}">
-			와우 만접이에요!
-					</c:when>
-					<c:otherwise>
-						<c:forEach items="${falseList}" var="f">
-				문제 : ${f.q_name}<br>
-							<img alt="해설 x" src="/resources/uplode/${f.q_filename}">
-							<br>
-				1. ${f.q_select1}<br>
-				2. ${f.q_select1}<br>
-				3. ${f.q_select1}<br>
-				4. ${f.q_select1}<br>
-							<c:if test="${f.q_select5 != null}">
-				5. ${f.q_select1}<br>
-							</c:if>
-				${f.q_answer}<br>
-				${f.q_exposition}<br>
-						</c:forEach>
-					</c:otherwise>
-				</c:choose>
-
-				<h2>리뷰 등록</h2>
-				<form id="review_form" action="/answer/review" method="post">
-					<input type="hidden" name="s_number"
-						value="${falseList[1].s_number}"><br> 작성자 : <input
-						type="text" name="m_id" value="${loginDTO.m_id}" readonly><br>
-					<fieldset>
-						<legend>
-							별점<br>
-						</legend>
-						<input type="radio" name="r_score" value="5.0" id="score1"><label
-							for="score1">⭐</label> <input type="radio" name="r_score"
-							value="4.0" id="score2"><label for="score2">⭐</label> <input
-							type="radio" name="r_score" value="3.0" id="score3"><label
-							for="score3">⭐</label> <input type="radio" name="r_score"
-							value="2.0" id="score4"><label for="score4">⭐</label> <input
-							type="radio" name="r_score" value="1.0" id="score5"><label
-							for="score5">⭐</label> <br>
-					</fieldset>
-					<br> 리뷰 내용 : <input type="text" name="r_contents"><br>
-					<input type="submit" value="리뷰 등록">
-				</form>
 			</main>
 			<footer class="py-4 bg-light mt-auto">
 				<div class="container-fluid px-4">

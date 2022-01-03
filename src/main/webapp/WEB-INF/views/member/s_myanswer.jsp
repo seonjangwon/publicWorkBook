@@ -166,21 +166,6 @@
 						</table>
 					</div>
 				</div>
-				<h2>내가 푼 문제</h2>
-				<table>
-					<tr>
-						<th>번호</th>
-						<th>과목 번호</th>
-						<th>점수</th>
-					</tr>
-					<c:forEach items="${msList}" var="ms" varStatus="s">
-						<tr>
-							<td>${s.count}</td>
-							<td>${ms.s_number}</td>
-							<td>${ms.ms_score}</td>
-						</tr>
-					</c:forEach>
-				</table>
 			</main>
 			<footer class="py-4 bg-light mt-auto">
 				<div class="container-fluid px-4">

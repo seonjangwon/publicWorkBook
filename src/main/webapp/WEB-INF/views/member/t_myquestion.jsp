@@ -169,23 +169,6 @@
 						</table>
 					</div>
 				</div>
-				<h2>내 문제 보기</h2>
-				<table>
-					<tr>
-						<th>번호</th>
-						<th>과목이름</th>
-						<th>작성자</th>
-						<th>문제 숫자</th>
-					</tr>
-					<c:forEach items="${sList}" var="s" varStatus="st">
-						<tr>
-							<td>${st.count}</td>
-							<td><a href="/question/detail?s_number=${s.s_number}">${s.s_name}</a></td>
-							<td>${s.m_id}</td>
-							<td>${s.s_quantity}</td>
-						</tr>
-					</c:forEach>
-				</table>
 			</main>
 			<footer class="py-4 bg-light mt-auto">
 				<div class="container-fluid px-4">

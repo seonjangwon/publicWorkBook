@@ -182,33 +182,6 @@
 						</table>
 					</div>
 				</div>
-				<h2>전체 회원 관리</h2>
-				<table>
-					<tr>
-						<th>번호</th>
-						<th>아이디</th>
-						<th>비밀번호</th>
-						<th>이름</th>
-						<th>이메일</th>
-						<th>전화번호</th>
-						<th>타입</th>
-						<th>삭제</th>
-					</tr>
-					<c:forEach items="${mList}" var="m">
-						<tr>
-							<td>${m.m_number}</td>
-							<td>${m.m_id}</td>
-							<td>${m.m_password}</td>
-							<td>${m.m_name}</td>
-							<td>${m.m_email}</td>
-							<td>${m.m_phone}</td>
-							<td>${m.m_type}</td>
-							<td><a
-								href="/member/m_delete?m_id=${m.m_id}&page=${page.page}">삭제</a></td>
-						</tr>
-					</c:forEach>
-				</table>
-				${page}
 				<div>
 					<c:choose>
 						<c:when test="${page.page <= 1 }">

@@ -131,48 +131,35 @@
 <div id="layoutSidenav_content">
 			<main>
 			<div>
-				<h2>회원 가입</h2>
 				<div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">선생님</div>
+                                    <div class="card-body">Teacher</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="/member/t_signup">가입하기</a>
+                                        <a class="small text-white stretched-link" href="/member/t_signup">Sign Up</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">학생</div>
+                                    <div class="card-body">Student</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="/member/s_signup">가입하기</a>
+                                        <a class="small text-white stretched-link" href="/member/s_signup">Sign Up</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">카카오</div>
+                                    <div class="card-body">Kakao</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">가입하기</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Danger Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="#">Sign Up</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-				<a href="/member/t_signup">선생님으로 회원가입</a><br> <a
-					href="/member/s_signup">학생으로 회원가입</a><br> <a href="/member/kakao">카카오로
-					회원가입</a>
 					</div>
 			</main>
 			<footer class="py-4 bg-light mt-auto">

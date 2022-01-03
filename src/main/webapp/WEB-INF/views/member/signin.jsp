@@ -182,6 +182,7 @@
 								</div>
 								<div class="card-footer text-center py-3">
 									<div class="small">
+										<p>Student</p>
 										<a href="https://kauth.kakao.com/oauth/authorize?client_id=5156cbc6620cde3e4649044a00f0dd0d&redirect_uri=http://localhost:8087/member/kakaologin&response_type=code">kakao Sign in!</a>
 									</div>
 								</div>
@@ -189,35 +190,6 @@
 						</div>
 					</div>
 				</div>
-				<h2>로그인</h2>
-				<h3>선생님</h3>
-				<form action="/member/login" method="post">
-					아이디 : <input type="text" name="m_id"><br> 비밀번호 : <input
-						type="password" name="m_password"><br> <input
-						type="hidden" name="m_type" value="teacher"><br> <input
-						type="submit" value="선생님 로그인">
-				</form>
-
-				<h3>학생</h3>
-				<form action="/member/login" method="post">
-					아이디 : <input type="text" name="m_id"><br> 비밀번호 : <input
-						type="password" name="m_password"><br> <input
-						type="hidden" name="m_type" value="student"><br> <input
-						type="submit" value="학생 로그인">
-				</form>
-
-				<h3>관리자</h3>
-				<form action="/member/login" method="post">
-					아이디 : <input type="text" name="m_id"><br> 비밀번호 : <input
-						type="password" name="m_password"><br> <input
-						type="hidden" name="m_type" value="admin"><br> <input
-						type="submit" value="관리자 로그인">
-				</form>
-				<br>
-				<button id="naverIdLogin_loginButton">네이버로 로그인</button>
-				<a href="/member/naverlogin">네이버</a><br> <a
-					href="https://kauth.kakao.com/oauth/authorize?client_id=5156cbc6620cde3e4649044a00f0dd0d&redirect_uri=http://localhost:8087/member/kakaologin&response_type=code">
-					카카오</a>
 			</main>
 			<footer class="py-4 bg-light mt-auto">
 				<div class="container-fluid px-4">
