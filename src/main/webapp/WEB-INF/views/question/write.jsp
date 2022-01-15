@@ -281,7 +281,8 @@
 										</div>
 										<div
 											class="d-flex align-items-center justify-content-between mt-4 mb-0">
-											<a class="btn btn-primary" onclick="write()">만들기</a>
+											<input type="submit" class="btn btn-primary" value="만들기">
+											<!-- <a class="btn btn-primary" onclick="write()">만들기</a> -->
 										</div>
 									</div>
 								</form>

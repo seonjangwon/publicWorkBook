@@ -47,19 +47,20 @@ public class QuestionService {
 	}
 
 	public void write(QuestionDTO qdto)throws IllegalStateException, IOException {
-		MultipartFile q_file =qdto.getQ_file();
-		
-		String q_filename = q_file.getOriginalFilename();
-		
-		q_filename = System.currentTimeMillis()+"-"+q_filename;
-		
-		String savePath = "D:\\development\\source\\Spring\\PublicWorkBook\\src\\main\\webapp\\resources\\upload\\"+q_filename;
-		
-		if(!q_file.isEmpty()) {
-			q_file.transferTo(new File(savePath));
-		}
-		
-		qdto.setQ_filename(q_filename);
+//		MultipartFile q_file =qdto.getQ_file();
+//		
+//		
+//		String q_filename = q_file.getOriginalFilename();
+//		
+//		q_filename = System.currentTimeMillis()+"-"+q_filename;
+//		
+//		String savePath = "D:\\development\\source\\Spring\\PublicWorkBook\\src\\main\\webapp\\resources\\upload\\"+q_filename;
+//		
+//		if(!q_file.isEmpty()) {
+//			q_file.transferTo(new File(savePath));
+//		}
+//		
+//		qdto.setQ_filename(q_filename);
 		
 		qr.write(qdto);
 		
